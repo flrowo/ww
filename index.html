@@ -4,8 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My page</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    oi
+    <script>
+        
+        
+    </script>
+
+    <div class="sbody">
+        <div class="header">
+            
+        </div>
+        <div class="content">
+            
+        </div>
+        <div class="footer">
+            oi dsaihusahdwq 8u392 0grhu7382 0gbu32   bpfu32i 8opb   fu38 i2bqf u8i2
+        </div>
+    </div>
+    <i class="fa fa-brands fa-discord"></i>
+
+    <!-- <script src="components/Main.js" type="module"></script> -->
+
+    <script type="module">
+        import { MainComponent } from './components/Main.js';
+
+        function setInnerHtmlByClass(className, htmlContent){
+            console.log(htmlContent)
+            let htmlElements = document.getElementsByClassName(className);
+            let i = 0;
+            while(htmlElements.length > i){
+                htmlElements[i].innerHTML = htmlContent;
+                i++;
+            }
+        }
+
+        setInnerHtmlByClass("content", MainComponent());
+
+        let headerItemsJson = [
+            {
+                content: "discord",
+                link: "https://discord.com/users/204997093067063296",
+                iconSrc: "./assets/discord.svg",
+            },
+            {
+                content: "osu",
+                link: "https://osu.ppy.sh/users/4689256",
+                iconSrc: "./assets/osu.svg",
+            },
+        ];
+
+        let headerHtml = "";
+        headerItemsJson.forEach(headerItem => {
+            let headerItemHtml = `
+            <div class="header-item" onclick="window.location = '${headerItem.link}'">
+                <div class="header-item-icon">
+                    <img src="${headerItem.iconSrc}">
+                </div>
+                ${headerItem.content}
+            </div>
+            `;
+
+            headerHtml += headerItemHtml;
+        });
+
+        setInnerHtmlByClass("header", headerHtml);
+
+    </script>
 </body>
 </html>
