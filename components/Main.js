@@ -1,11 +1,15 @@
-export let MainComponent = () => {
+export let Main = () => {
     let eae = "https://cdn.myanimelist.net/images/characters/9/365465.jpg";
-    
-    // should return html of the content of the main page
 
-    return `
-    <div style="height: auto; width: 100px; filter: chroma(#3300FF)">
-        <img src="${eae}">
-    </div>
-    `;
+    return (`
+        <div style="display: flex; justify-content: space-evenly; width: 100%">
+            <div style="height: auto; width: 100px;"> <img src="${eae}"> </div>
+            
+            <div>
+                i like studiying japanese, games and coding
+                <br>
+                hope to get along
+            </div>
+        </div>
+    `);
 }
